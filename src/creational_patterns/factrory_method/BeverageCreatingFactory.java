@@ -10,8 +10,11 @@ package creational_patterns.factrory_method;
  */
 public abstract class BeverageCreatingFactory {
 
+    // esitetään muuttuja Beverage tyyppina, 
+    //joka will created inside of children classes. 
     Beverage beverage = null;
 
+    //esitetään abstracti metodi Beverage tyyppinä
     abstract Beverage createBeverage();
 
     public void feed() {
