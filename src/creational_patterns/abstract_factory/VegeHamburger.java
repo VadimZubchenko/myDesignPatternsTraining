@@ -10,4 +10,6 @@ package creational_patterns.abstract_factory;
  */
 public interface VegeHamburger {
 
+public abstract void makeHamburger();
+
 }

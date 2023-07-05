@@ -15,9 +15,9 @@ public abstract class HamburgerCreatingFactory {
     VegeHamburger vegeHamburger = null;
 
     // Beef and Vege hamburgers creators 
-    public abstract BeefHamburger createBeefHamburger();
+    public abstract BeefHamburger getBeefHamburger();
 
-    public abstract VegeHamburger createVegeHamburger();
+    public abstract VegeHamburger getVegeHamburger();
 
 
     public void completeOrder() {
@@ -28,11 +28,11 @@ public abstract class HamburgerCreatingFactory {
 
         if (beefHamburger == null) {
 
-            beefHamburger = createBeefHamburger();
+            beefHamburger = getBeefHamburger();
             System.out.println("You got hamburger: " + beefHamburger);
 
         } else {
-            vegeHamburger = createVegeHamburger();
+            vegeHamburger = getVegeHamburger();
             System.out.println("You got hamburger: " + vegeHamburger);
         }
 

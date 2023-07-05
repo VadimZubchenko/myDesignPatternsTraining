@@ -4,6 +4,9 @@
  */
 package creational_patterns.abstract_factory;
 
+import creational_patterns.abstract_factory.italianFood.ItalianFoodFactory;
+import creational_patterns.abstract_factory.americanFood.AmericanFoodFactory;
+
 /**
  *
  * @author vadimzubchenko
@@ -11,18 +14,28 @@ package creational_patterns.abstract_factory;
 public class Main {
 
     public static void main(String[] args) {
+
+// Below is presented two differents products implementation
+// first one using a method makeHamburger() and second toString() 
         HamburgerCreatingFactory italian = new ItalianFoodFactory();
-        italian.createBeefHamburger();
-        italian.completeOrder();
-        italian.createVegeHamburger();
-        italian.completeOrder();
-        
-        System.out.println("\n");
-        
+        BeefHamburger beefhamburger = italian.getBeefHamburger();
+        VegeHamburger vegeHamburger = italian.getVegeHamburger();
+        System.out.println("Creating Italian hamburgers...");
+
+        vegeHamburger.makeHamburger();
+        beefhamburger.makeHamburger();
+
+        System.out.println("\nOrdered American hamburgers...");
+
         HamburgerCreatingFactory american = new AmericanFoodFactory();
-        american.createBeefHamburger();
+
+        System.out.println("Implemented using method toString() in product creating class.");
+        //beef hamburger is ordered
+        american.getBeefHamburger();
+
         american.completeOrder();
-        american.createVegeHamburger();
+        //vege hamburger is ordered
+        american.getVegeHamburger();
         american.completeOrder();
     }
 }
